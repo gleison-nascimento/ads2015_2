@@ -16,6 +16,7 @@ and open the template in the editor.
     /* Remove the jumbotron's default bottom margin */
      .jumbotron {
       margin-bottom: 0;
+      width: 100%;
     }
    
     /* Add a gray background color and some padding to the footer */
