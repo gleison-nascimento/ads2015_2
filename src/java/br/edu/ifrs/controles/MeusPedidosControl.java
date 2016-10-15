@@ -5,6 +5,7 @@
  */
 package br.edu.ifrs.controles;
 
+import br.edu.ifrs.modelo.Pedidos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -38,7 +39,7 @@ public class MeusPedidosControl extends HttpServlet {
             String status = request.getParameter("status");
             int qtdItens = Integer.parseInt(request.getParameter("qtdItens"));
             String enderecoEnvio = request.getParameter("enderecoEnvio");
-            date data = request.getParameter("data");
+            String data = request.getParameter("data");
             float valorTotal = Float.parseFloat(request.getParameter("valorTotal"));
             
             Pedidos Pid = new Pedidos();

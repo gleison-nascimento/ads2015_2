@@ -17,7 +17,7 @@ public class Pedidos {
     private String nroPedido;
     private String status;
     private int qtdItens;
-    private date data;
+    private String data;
     private float valorTotal;
 
     public String getNroPedido() {
@@ -44,11 +44,11 @@ public class Pedidos {
         this.qtdItens = qtdItens;
     }
 
-    public date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
@@ -70,7 +70,7 @@ public class Pedidos {
         pstmt.setString(1, nroPedido);
         pstmt.setString(2, status);
         pstmt.setInt(3, qtdItens);
-        pstmt.setDate(4, data);
+        pstmt.setString(4, data);
         pstmt.setFloat(5, valorTotal);
 
         pstmt.execute();
