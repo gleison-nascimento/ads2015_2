@@ -43,12 +43,12 @@ and open the template in the editor.
           </div>
         </nav>
         
-        <div class="col-sm-4" align="center">
+        <div class="col-sm-5" align="center">
             <div class="panel panel-primary" align="center">
-                <div class="panel-heading" >Meus Pedidos</div>
-                <div class="panel-body"><form action="CidadesControl"> <!-- onsubmit="return validarForm();"-->
-                                            <label for="nome">Nro. do Pedido :</label>
-                                            <input type="number" name="nome" id="nome" min="1" max="999999999999999999999999999"><br>
+                <div class="panel-heading" >Pesquisar Meus Pedidos</div>
+                <div class="panel-body"><form action="MeusPedidosControl"> <!-- onsubmit="return validarForm();"-->
+                                            <label for="nroPedido">Nro. do Pedido :</label>
+                                            <input type="number" name="nroPedido" id="nome" min="1" max="999999999999999999999999999"><br>
                                             <p></p>
                                             <label for="Status">Status :</label>
                                             <select name="Status" id="Status">
@@ -64,16 +64,33 @@ and open the template in the editor.
                                             <input type="text" name="enderecoEnvio" id="enderecoEnvio" size="16"><br>
                                             <p></p>
                                             <label for="data">Data do Pedido :</label>
-                                            <input type="date" name="bday">
+                                            <input type="date" name="data">
                                             <p></p>
                                             <label for="valorTotal">Valor Total :</label>
                                             <input type="text" pattern="\[0-9]\R\$\d{10}\,\d{2}" name="valorTotal" id="qtdItens" size="24"><br>
                                             <p></p>
-                                            <input type="submit" value="Salvar">
+                                            <input type="submit" value="Pesquisar">
                                             <input type="reset" value="Limpar">
-                                        </form></div>
-                <div class="panel-footer"></div>
+                                        </form>
+                </div>
             </div>
          </div>
+        
+        <div class="col-sm-12" align="center">
+            <div class="panel panel-primary" align="center">
+                <div class="panel-heading" >Meus Pedidos</div>
+                <div class="panel-body"><form action="MeusPedidos"> <!-- onsubmit="return validarForm();"-->
+                                            <p></p>
+                                            <p></p>
+                                            <p></p>
+                                            <p></p>
+                                            <p></p>
+                                            <p></p>
+                                            <p></p>
+                                        </form>
+                </div>
+            </div>
+         </div>
+        
     </body>
 </html>
