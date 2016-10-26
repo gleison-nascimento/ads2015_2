@@ -24,3 +24,9 @@ and open the template in the editor.
       background-color: #f2f2f2;
       padding: 25px;
     }
+    
+    label.formulario {
+        display: inline-block;
+        width: 40%;
+        margin-left: 0;
+    }

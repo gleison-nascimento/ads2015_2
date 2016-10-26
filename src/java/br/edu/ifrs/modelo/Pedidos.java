@@ -17,9 +17,18 @@ public class Pedidos {
     private String nroPedido;
     private String status;
     private int qtdItens;
+    private String endereco;
     private String data;
     private float valorTotal;
 
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    
     public String getNroPedido() {
         return nroPedido;
     }
@@ -66,12 +75,13 @@ public class Pedidos {
                                                                  //IP da Máquina:Porta do Banco/Nome do Banco de Dados, usuário (root), senha 
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/prog3", "root", "connect");
 
-        PreparedStatement pstmt = con.prepareStatement("Select into Pedidos (nroPedido, status, qtdItens, data, valorTotal) values (?, ?, ?, ?, ?)");
+        PreparedStatement pstmt = con.prepareStatement("Select * from Pedidos (nroPedido, status, qtdItens, endereco, data, valorTotal) values (?, ?, ?, ?, ?, ?)");
         pstmt.setString(1, nroPedido);
         pstmt.setString(2, status);
         pstmt.setInt(3, qtdItens);
-        pstmt.setString(4, data);
-        pstmt.setFloat(5, valorTotal);
+        pstmt.setString(4,endereco);
+        pstmt.setString(5, data);
+        pstmt.setFloat(6, valorTotal);
 
         pstmt.execute();
 

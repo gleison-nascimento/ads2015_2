@@ -43,36 +43,39 @@ and open the template in the editor.
           </div>
         </nav>
         
-        <div class="col-sm-5" align="center">
-            <div class="panel panel-primary" align="center">
-                <div class="panel-heading" >Pesquisar Meus Pedidos</div>
-                <div class="panel-body"><form action="MeusPedidosControl"> <!-- onsubmit="return validarForm();"-->
-                                            <label for="nroPedido">Nro. do Pedido :</label>
-                                            <input type="number" name="nroPedido" id="nome" min="1" max="999999999999999999999999999"><br>
-                                            <p></p>
-                                            <label for="Status">Status :</label>
+        <div class="col-sm-5">
+            <div class="panel panel-primary" >
+                <div class="panel-heading" align="center">Pesquisar Meus Pedidos</div>
+                <div class="panel-body" ><form action="MeusPedidosControl" > <!-- onsubmit="return validarForm();"-->
+                                            <label class="formulario" for="nroPedido">Nro. do Pedido :</label>
+                                            <input type="text" name="nroPedido" id="nome" size="29"><br>
+                                            
+                                            <label class="formulario" for="Status" >Status :</label>
                                             <select name="Status" id="Status">
                                                 <option value="CP">Confirmação do pedido</option>
                                                 <option value="CPag">Confirmação do pagamento</option>
                                                 <option value="AEP">Aguardando Envio do Produto</option>
                                                 <option value="CEP">Confirmação do envio do produto</option>
                                                 <option value="PF">Pedido Finalizado</option>
-                                            </select><br>
-                                            <p></p>
-                                            <label for="qtdItens">Qtd de Itens :</label>
-                                            <input type="number" name="qtdItens" id="qtdItens" min="1" max="999999"><br>
-                                            <p></p>
-                                            <label for="enderecoEnvio">Endereço de Envio :</label>
-                                            <input type="text" name="enderecoEnvio" id="enderecoEnvio" size="16"><br>
-                                            <p></p>
-                                            <label for="data">Data do Pedido :</label>
+                                            </select>
+                                            
+                                            <label class="formulario" for="qtdItens">Qtd de Itens :</label>
+                                            <input type="text" name="qtdItens" id="qtdItens" size="29"><br>
+                                            
+                                            <label class="formulario" for="enderecoEnvio">Endereço de Envio :</label>
+                                            <input type="text" name="enderecoEnvio" id="enderecoEnvio" size="29"><br>
+                                            
+                                            <label class="formulario" for="data">Data do Pedido :</label>
                                             <input type="date" name="data">
-                                            <p></p>
-                                            <label for="valorTotal">Valor Total :</label>
-                                            <input type="text" pattern="\[0-9]\R\$\d{10}\,\d{2}" name="valorTotal" id="qtdItens" size="24"><br>
-                                            <p></p>
+                                            
+                                            
+                                            <label class="formulario" for="valorTotal">Valor Total :</label>
+                                            <input type="text" pattern="\[0-9]\R\$\d{10}\,\d{2}" name="valorTotal" id="qtdItens" size="29"><br>
+                                            <br>
+                                            <div  class="panel-footer" align="center">
                                             <input type="submit" value="Pesquisar">
                                             <input type="reset" value="Limpar">
+                                            </div>
                                         </form>
                 </div>
             </div>
@@ -82,13 +85,7 @@ and open the template in the editor.
             <div class="panel panel-primary" align="center">
                 <div class="panel-heading" >Meus Pedidos</div>
                 <div class="panel-body"><form action="MeusPedidos"> <!-- onsubmit="return validarForm();"-->
-                                            <p></p>
-                                            <p></p>
-                                            <p></p>
-                                            <p></p>
-                                            <p></p>
-                                            <p></p>
-                                            <p></p>
+                                            <br><br><br><br><br><br>
                                         </form>
                 </div>
             </div>
