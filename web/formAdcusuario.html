@@ -71,18 +71,20 @@ and open the template in the editor.
                             <label for="telcel">Telefone Celular :</label>
                             <input type="text" name="telcel" id="telcel" size="60" />
                             <label for="perfil">Perfil :</label>
-                            <input type="checkbox" name="perfil" id="perfil" value="admin" />
+                            <input type="checkbox" name="perfil" id="perfil" value="admin" disabled="disabled"/>
                             <label>Administrador </label>
-                            <input type="checkbox" name="perfil" id="id" value="cliente" />
+                            <input type="checkbox" name="perfil" id="id" value="cliente" checked="checked" disabled="disabled"/>
                             <label>Cliente </label><br>  
                             <label for="username">Username :</label>
                             <input type="text" name="username" id="username" size="60" />                            
                             <label for="senha">Senha* (oito digitos) :</label>
                             <input type="text" name="senha" id="senha" size="60"/>
+                            <label for="senha1">Confirma Senha* (oito digitos) :</label>
+                            <input type="text" name="senha1" id="senha1" size="60"/>
                             <label for="status">Status* :</label>
-                            <input type="checkbox" name="status" id="status" value="ativo" />
+                            <input type="checkbox" name="status" id="status" value="ativo" checked="checked" disabled="disabled"/>
                             <label>Ativo </label>
-                            <input type="checkbox" name="status" id="status" value="inativo" />
+                            <input type="checkbox" name="status" id="status" value="inativo" disabled="disabled"/>
                             <label>Inativo </label><br>
                             <textarea name="observacao" id="observacao" rows="4" cols="50">
                             </textarea><br>
