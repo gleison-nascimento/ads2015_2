@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+  <title>Adicionar Produto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="Estilos/Estilo.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <img src="Imagens/Loj-o-Oba-Oba.png" class="img-responsive" style="width:100%" alt="ImageBanner"/>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--<a class="navbar-brand" href="#">Logo</a>-->
+    </div>
+      
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="#">Institucional</a></li>
+        <li><a href="formProdutos.html">Produtos</a></li>
+        <li><a href="formMeusPedidos.html">Meus Pedidos</a></li>
+        <li><a href="formAdcusuario.html">Administração</a></li>
+        <li><a href="formFaleConosco.html">Fale Conosco</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sua Conta</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+    <div class="col-sm-5" align="center">
+            <div class="panel panel-primary" align="center">
+                <div class="panel-heading" >Cadastrar novo produto</div>
+                    <div class="panel-body">
+                        <form name="cadastro" action="cadastrar" method="POST">
+                            <label for="nome">Nome* :</label>
+                            <input type="text" name="nome" id="nome" size="60" /><br><br>
+                            <label for="descricao">Descricao :</label><br>
+                            <textarea name="descricao" id="descricao" rows="4" cols="50">
+                            </textarea><br>
+                            <label for="univenda">Unidade de Venda :</label>
+                            <input type="text" name="univenda" id="univenda" size="60" />
+                            <label for="preco">Preco* :</label>
+                            <input type="text" name="preco" id="preco" size="60" />
+                            <label for="parce">Parcelamento* :</label>
+                            <select name="parce" id="parce">
+                                <option>A vista</option>
+                                <option>1x</option>
+                                <option>2x</option>
+                                <option>3x</option>
+                                <option>4x</option>
+                                <option>5x</option>
+                                <option>6x</option>
+                                <option>7x</option>
+                                <option>8x</option>
+                                <option>9x</option>
+                            </select><br>
+                            <label for="entrega">Condicoes de entrega* :</label>
+                            <input type="text" name="entrega" id="entrega" size="60" />
+                            <label for="foto">Foto* :</label><br>
+                            <label for="categoria">Categoria* :</label>
+                            <select name="categoria" id="categoria">
+                                <option>????</option>
+                                <option></option>
+                            </select>
+                            <label for="status">Status* :</label>
+                            <input type="checkbox" name="status" id="Status" value="ativo" />
+                            <label>Ativo </label>
+                            <input type="checkbox" name="status" id="status" value="inativo" />
+                            <label>Inativo </label><br>
+                            <label for="observacao">Observacao :</label>
+                            <textarea name="observacao" id="observacao" rows="4" cols="50">
+                            </textarea><br>
+                            <input type="submit" value="Enviar" name="btEnviar" /><br>
+                            <label>* Campos Obrigatorios</label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
