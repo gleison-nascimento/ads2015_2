@@ -5,6 +5,8 @@
  */
 package br.edu.ifrs.controles;
 
+import br.edu.ifrs.modelo.UsuariosDAO;
+import br.edu.ifrs.modelo.bean.UsuariosBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -95,7 +97,7 @@ public class UsuariosControl extends HttpServlet {
     protected void buscar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsusariosBean();
+            UsuariosBean usu = new UsuariosBean();
             usu.setNome((request.getParameter("nome") == null ? "":request.getParameter("nome")));
             
             UsuariosDAO usuario = new UsuariosDAO();
@@ -112,7 +114,7 @@ public class UsuariosControl extends HttpServlet {
     protected void excluir(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsusariosBean();
+            UsuariosBean usu = new UsuariosBean();
             usu.setId(Integer.parseInt(request.getParameter("id")));
             
             UsuariosDAO usuario = new UsuariosDAO();
@@ -131,11 +133,11 @@ public class UsuariosControl extends HttpServlet {
     protected void editar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsusariosBean();
+            UsuariosBean usu = new UsuariosBean();
             usu.setId(Integer.parseInt(request.getParameter("id")));
             
             UsuariosDAO usuario = new UsuariosDAO();
-            UsuariosBean usu = usuario.buscarPorId(usu);
+            UsuariosBean usua = usuario.buscarPorId(usu);
             
             request.getSession().setAttribute("usua", usu);
         } catch (Exception e) {
@@ -149,7 +151,7 @@ public class UsuariosControl extends HttpServlet {
     protected void atualizar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsusariosBean();
+            UsuariosBean usu = new UsuariosBean();
             request.getSession().setAttribute("usua", usu);
             
             usu.setId(Integer.parseInt(request.getParameter("id")));
@@ -157,7 +159,7 @@ public class UsuariosControl extends HttpServlet {
             usu.setRg(request.getParameter("rg"));
             usu.setOrgexp(request.getParameter("orgexp"));
             usu.setCpf(request.getParameter("cpf"));
-            usu.setSexo(request.getParameter("peso"));
+            usu.setSexo(request.getParameter("sexo"));
             usu.setEndereco(request.getParameter("endereco"));
             usu.setEmail(request.getParameter("email"));
             usu.setTelres(request.getParameter("telres"));
