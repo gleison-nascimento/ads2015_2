@@ -6,8 +6,12 @@
 package br.edu.ifrs.controles;
 
 import br.edu.ifrs.modelo.Pedidos;
+import br.edu.ifrs.modelo.UsuariosDAO;
+import br.edu.ifrs.modelo.bean.PedidoBean;
+import br.edu.ifrs.modelo.bean.UsuariosBean;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,6 +37,32 @@ public class MeusPedidosControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+         String op = request.getParameter("DEFINIR UM PARAMETRO PADRÃO ATRAVÉS DO FORMADCUSUARIO");
+            
+        if (op.equals("INSERIR")) {
+            //inserir(request, response);
+        } else {
+            if (op.equals("PESQUISAR")) {
+                buscar(request, response);
+            } else {
+                if (op.equals("EXCLUIR")) {
+                    //excluir(request, response);
+                } else {
+                    if (op.equals("EDITAR")) {
+                        editar(request, response);
+                    } else {
+                        if (op.equals("ATUALIZAR")) {
+                            //atualizar(request, response);
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+        
 //        response.setContentType("text/html;charset=UTF-8");
         try {
             String nroPedido = request.getParameter("nroPedido");
@@ -55,6 +85,46 @@ public class MeusPedidosControl extends HttpServlet {
 //        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoPedidos.jsp");
 //        dispatcher.forward(request, response);
     }
+
+    protected void buscar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {    
+        try {
+            UsuariosBean usu = new UsuariosBean();
+            PedidoBean pe = new PedidoBean();
+            usu.setNome((request.getParameter("nome") == null ? "":request.getParameter("nome")));
+            pe.setData_emissao((request.getParameter("data_emissao") == null ? "":request.getParameter("data_emissao")));
+            
+            UsuariosDAO usuario = new UsuariosDAO();
+            List<UsuariosBean> lista = usuario.buscar(usu);
+            request.setAttribute("lista", lista);
+        } catch (Exception e) {
+            request.setAttribute("erro", e.getMessage());
+        }
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("formMeusPedidos.jsp");
+        dispatcher.forward(request, response);
+    }
+
+   
+    protected void editar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {    
+        try {
+            UsuariosBean usu = new UsuariosBean();
+            usu.setId(Integer.parseInt(request.getParameter("id")));
+            
+            UsuariosDAO usuario = new UsuariosDAO();
+            UsuariosBean usua = usuario.buscarPorId(usu);
+            
+            request.getSession().setAttribute("usua", usu);
+        } catch (Exception e) {
+            request.setAttribute("erro", e.getMessage());
+        }
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("formAddusuario.jsp");
+        dispatcher.forward(request, response);
+    }
+    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

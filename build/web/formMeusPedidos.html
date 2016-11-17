@@ -67,8 +67,8 @@ and open the template in the editor.
             <div class="panel panel-primary" align="center">
                 <div class="panel-heading" >Meus Pedidos</div>
                 <div class="panel-body"><form action="MeusPedidos"> <!-- onsubmit="return validarForm();"-->
-                        
-                        
+
+
                         <table border="1">
                             <tr>
                                 <th>Número do pedido</th>
@@ -87,29 +87,21 @@ and open the template in the editor.
                                         <td><%= u.getNum_pedido()%></td>
                                         <td><%= u.getData_emissao()%></td>
                                         <td><%= u.getValor_total()%></td>
-                                      
+
                                         <td>
                                             <a href="JogadoresControl?op=EDITAR&id=<%= j.getId()%>">Editar</a>&nbsp;&nbsp;
-                                     
+
                                         </td>
                                     </tr>
                                     <%
                                     }
                                     %>
-                                    </table>
-
-
-
+                        </table>
                                     <br><br><br><br><br><br>
-
-
-
-
 
                                     </form>
                                     </div>
                                     </div>
                                     </div>
-
-                                    </body>
-                                    </html>
+    </body>
+</html>
