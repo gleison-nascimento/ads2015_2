@@ -26,6 +26,9 @@ public class UsuariosBean {
     private String senha;
     private String status;
     private String observacao;
+    
+    
+    
 
 
  public UsuariosBean() {
