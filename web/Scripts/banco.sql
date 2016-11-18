@@ -30,7 +30,7 @@ create table categorias (
   id int auto_increment not null,
   nome varchar(50) not null, 
   descricao text,
-  situcao varchar(1) not null,
+  situacao varchar(1) not null,
   primary key (id)
 );
 

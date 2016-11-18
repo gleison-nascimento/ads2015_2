@@ -10,7 +10,7 @@ package br.edu.ifrs.modelo.bean;
  * @author anderson
  */
 public class UsuariosBean {
-    private int id;
+  
     private String nome;
     private String rg;
     private String orgexp;
@@ -24,23 +24,12 @@ public class UsuariosBean {
     private String perfil;
     private String username;
     private String senha;
-    private String status;
+    private String situacao;
     private String observacao;
-    
-    
-    
 
 
  public UsuariosBean() {
         nome = "";
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNome() {
@@ -147,12 +136,12 @@ public class UsuariosBean {
         this.senha = senha;
     }
 
-    public String getStatus() {
-        return status;
+    public String getSituacao() {
+        return situacao;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
     }
 
     public String getObservacao() {
@@ -162,5 +151,5 @@ public class UsuariosBean {
     public void setObservacao(String observacao) {
         this.observacao = observacao;
     }
-    
+
 }

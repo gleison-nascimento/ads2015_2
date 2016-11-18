@@ -5,8 +5,8 @@
  */
 package br.edu.ifrs.controles;
 
-import br.edu.ifrs.modelo.UsuariosDAO;
-import br.edu.ifrs.modelo.bean.UsuariosBean;
+import br.edu.ifrs.modelo.CategoriasDAO;
+import br.edu.ifrs.modelo.bean.CategoriasBean;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author anderson
  */
-@WebServlet(name = "UsuariosControl", urlPatterns = {"/UsuariosControl"})
-public class UsuariosControl extends HttpServlet {
+@WebServlet(name = "CategoriasControl", urlPatterns = {"/CategoriasControl"})
+public class CategoriasControl extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,7 +35,7 @@ public class UsuariosControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String op = request.getParameter("DEFINIR UM PARAMETRO PADRÃO ATRAVÉS DO FORMADCUSUARIO");
+         String op = request.getParameter("DEFINIR UM PARAMETRO PADRÃO ATRAVÉS DO FORMADCCATEGORIA");
             
         if (op.equals("INSERIR")) {
             inserir(request, response);
@@ -56,69 +56,61 @@ public class UsuariosControl extends HttpServlet {
                 }
             }
         }
+        
     }
 
+    
     protected void inserir(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsuariosBean();
-            request.getSession().setAttribute("usua", usu);
+            CategoriasBean c = new CategoriasBean();
+            request.getSession().setAttribute("categ", c);
             
             
-            usu.setNome(request.getParameter("nome"));
-            usu.setRg(request.getParameter("rg"));
-            usu.setOrgexp(request.getParameter("orgexp"));
-            usu.setCpf(request.getParameter("cpf"));
-            usu.setSexo(request.getParameter("peso"));
-            usu.setEndereco(request.getParameter("endereco"));
-            usu.setEmail(request.getParameter("email"));
-            usu.setTelres(request.getParameter("telres"));
-            usu.setTelcom(request.getParameter("telcom"));
-            usu.setTelcel(request.getParameter("telcel"));
-            usu.setPerfil(request.getParameter("perfil"));
-            usu.setUsername(request.getParameter("username"));
-            usu.setSenha(request.getParameter("senha"));
-            usu.setSituacao(request.getParameter("situacao"));
-            usu.setObservacao(request.getParameter("observacao"));
+            c.setNome(request.getParameter("nome"));
+            c.setDescricao(request.getParameter("descricao"));
+            c.setSituacao(request.getParameter("situacao"));
             
-            UsuariosDAO usuario = new UsuariosDAO();
-            usuario.inserir(usu);
             
-            request.setAttribute("msg", "Usuário cadastrado com sucesso!!!");
-            request.getSession().removeAttribute("usua");
+            CategoriasDAO categoria = new CategoriasDAO();
+            categoria.inserir(c);
+            
+            request.setAttribute("msg", "Nova categoria cadastrada no sistema");
+            request.getSession().removeAttribute("categ");
         } catch (Exception e) {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_categoria.jsp");
         dispatcher.forward(request, response);
     }
     
     protected void buscar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsuariosBean();
-            usu.setNome((request.getParameter("nome") == null ? "":request.getParameter("nome")));
+            CategoriasBean c = new CategoriasBean();
+            c.setNome((request.getParameter("nome") == null ? "":request.getParameter("nome")));
+            c.setDescricao((request.getParameter("descricao") == null ? "":request.getParameter("descricao")));
             
-            UsuariosDAO usuario = new UsuariosDAO();
-            List<UsuariosBean> lista = usuario.buscar(usu);
+            CategoriasDAO categoria = new CategoriasDAO();
+            List<CategoriasBean> lista = categoria.buscar(c);
             request.setAttribute("lista", lista);
         } catch (Exception e) {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoBusca_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoBusca_categoria.jsp");
         dispatcher.forward(request, response);
     }
 
     protected void excluir(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsuariosBean();
-            usu.setCpf(request.getParameter("cpf"));
+            CategoriasBean c = new CategoriasBean();
+            c.setId(Integer.parseInt(request.getParameter("id")));
             
-            UsuariosDAO usuario = new UsuariosDAO();
-            usuario.deletar(usu);
+            CategoriasDAO categoria = new CategoriasDAO();
+            categoria.deletar(c);
             
             buscar(request, response);
            
@@ -126,61 +118,50 @@ public class UsuariosControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_categoria.jsp");
         dispatcher.forward(request, response);
     }
     
     protected void editar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsuariosBean();
-            usu.setCpf(request.getParameter("cpf"));
+            CategoriasBean c = new CategoriasBean();
+            c.setId(Integer.parseInt(request.getParameter("id")));
             
-            UsuariosDAO usuario = new UsuariosDAO();
-            UsuariosBean usua = usuario.buscarPorCpf(usu);
+            CategoriasDAO categoria = new CategoriasDAO();
+            CategoriasBean categ = categoria.buscarPorId(c);
             
-            request.getSession().setAttribute("usua", usu);
+            request.getSession().setAttribute("categ", c);
         } catch (Exception e) {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("formAddusuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("formAddcategoria.jsp");
         dispatcher.forward(request, response);
     }
     
     protected void atualizar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
-            UsuariosBean usu = new UsuariosBean();
-            request.getSession().setAttribute("usua", usu);
+            CategoriasBean c = new CategoriasBean();
+            request.getSession().setAttribute("categ", c);
             
+            c.setId(Integer.parseInt(request.getParameter("id")));
+            c.setNome(request.getParameter("nome"));
+            c.setDescricao(request.getParameter("descricao"));
+            c.setSituacao(request.getParameter("situacao"));
             
-            usu.setNome(request.getParameter("nome"));
-            usu.setRg(request.getParameter("rg"));
-            usu.setOrgexp(request.getParameter("orgexp"));
-            usu.setCpf(request.getParameter("cpf"));
-            usu.setSexo(request.getParameter("sexo"));
-            usu.setEndereco(request.getParameter("endereco"));
-            usu.setEmail(request.getParameter("email"));
-            usu.setTelres(request.getParameter("telres"));
-            usu.setTelcom(request.getParameter("telcom"));
-            usu.setTelcel(request.getParameter("telcel"));
-            usu.setPerfil(request.getParameter("perfil"));
-            usu.setUsername(request.getParameter("username"));
-            usu.setSenha(request.getParameter("senha"));
-            usu.setSituacao(request.getParameter("situacao"));
-            usu.setObservacao(request.getParameter("observacao"));
 
-            UsuariosDAO usuario = new UsuariosDAO();
-            usuario.atualizar(usu);
+            CategoriasDAO categoria = new CategoriasDAO();
+            categoria.atualizar(c);
             
-            request.setAttribute("msg", "Usuário atualizado com sucesso!!!");
-            request.getSession().removeAttribute("jog");
+            request.setAttribute("msg", "Categoria atualizada com sucesso!!!");
+            request.getSession().removeAttribute("categ");
         } catch (Exception e) {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_categoria.jsp");
         dispatcher.forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

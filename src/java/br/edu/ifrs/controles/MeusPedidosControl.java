@@ -110,10 +110,10 @@ public class MeusPedidosControl extends HttpServlet {
             throws ServletException, IOException {    
         try {
             UsuariosBean usu = new UsuariosBean();
-            usu.setId(Integer.parseInt(request.getParameter("id")));
+            usu.setCpf(request.getParameter("cpf"));
             
             UsuariosDAO usuario = new UsuariosDAO();
-            UsuariosBean usua = usuario.buscarPorId(usu);
+            UsuariosBean usua = usuario.buscarPorCpf(usu);
             
             request.getSession().setAttribute("usua", usu);
         } catch (Exception e) {
