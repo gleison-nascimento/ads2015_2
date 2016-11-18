@@ -175,7 +175,7 @@ public class UsuariosControl extends HttpServlet {
             usuario.atualizar(usu);
             
             request.setAttribute("msg", "Usuário atualizado com sucesso!!!");
-            request.getSession().removeAttribute("jog");
+            request.getSession().removeAttribute("usua");
         } catch (Exception e) {
             request.setAttribute("erro", e.getMessage());
         }
