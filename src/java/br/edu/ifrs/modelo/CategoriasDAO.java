@@ -22,7 +22,7 @@ public class CategoriasDAO {
     public void inserir(CategoriasBean c) throws Exception {
         Connection con = Conexao.abrir();
 
-        PreparedStatement pstmt = con.prepareStatement("insert into categorias (nome, descricao text, situacao) values (?, ?, ?)");
+        PreparedStatement pstmt = con.prepareStatement("insert into categorias (nome, descricao, situacao) values (?, ?, ?)");
         pstmt.setString(1, c.getNome());
         pstmt.setString(2, c.getDescricao());
         pstmt.setString(3, c.getSituacao());
@@ -36,7 +36,7 @@ public class CategoriasDAO {
     public void atualizar(CategoriasBean c) throws Exception {
         Connection con = Conexao.abrir();
 
-        PreparedStatement pstmt = con.prepareStatement("update categorias set nome = ?, descricao text = ?, situacao = ? where id = ?");
+        PreparedStatement pstmt = con.prepareStatement("update categorias set nome = ?, descricao = ?, situacao = ? where id = ?");
         pstmt.setString(1, c.getNome());
         pstmt.setString(2, c.getDescricao());
         pstmt.setString(3, c.getSituacao());
