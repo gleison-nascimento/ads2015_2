@@ -39,7 +39,7 @@ public class MeusPedidosControl extends HttpServlet {
             throws ServletException, IOException {
         
         
-         String op = request.getParameter("DEFINIR UM PARAMETRO PADRÃO ATRAVÉS DO FORMADCUSUARIO");
+         String op = request.getParameter("op");
             
         if (op.equals("INSERIR")) {
             //inserir(request, response);
