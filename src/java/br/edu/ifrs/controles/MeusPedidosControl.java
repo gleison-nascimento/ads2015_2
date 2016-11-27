@@ -69,6 +69,7 @@ public class MeusPedidosControl extends HttpServlet {
             usu.setNome((request.getParameter("nome") == null ? "":request.getParameter("nome")));
             pe.setData_emissao((request.getParameter("data_emissao") == null ? "":request.getParameter("data_emissao")));
             
+  
             UsuariosDAO usuario = new UsuariosDAO();
             List<UsuariosBean> lista = usuario.buscar(usu);
             request.setAttribute("lista", lista);
