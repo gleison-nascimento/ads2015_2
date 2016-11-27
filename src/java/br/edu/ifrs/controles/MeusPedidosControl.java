@@ -50,7 +50,7 @@ public class MeusPedidosControl extends HttpServlet {
                     //excluir(request, response);
                 } else {
                     if (op.equals("EDITAR")) {
-                        editar(request, response);
+                        //editar(request, response);
                     } else {
                         if (op.equals("ATUALIZAR")) {
                             //atualizar(request, response);
@@ -77,12 +77,12 @@ public class MeusPedidosControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("formMeusPedidos.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoBuscaMeusPedidos.jsp");
         dispatcher.forward(request, response);
     }
 
    
-    protected void editar(HttpServletRequest request, HttpServletResponse response)
+    /*protected void editar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
             UsuariosBean usu = new UsuariosBean();
@@ -98,7 +98,7 @@ public class MeusPedidosControl extends HttpServlet {
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("formAddusuario.jsp");
         dispatcher.forward(request, response);
-    }
+    }*/
     
 
 

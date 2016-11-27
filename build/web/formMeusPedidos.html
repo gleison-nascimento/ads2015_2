@@ -66,32 +66,7 @@ and open the template in the editor.
             <div class="panel panel-primary" align="center">
                 <div class="panel-heading" >Meus Pedidos</div>
                 <div class="panel-body"><form action="MeusPedidos"> <!-- onsubmit="return validarForm();"-->
-                        <table border="1">
-                            <tr>
-                                <th>Número do pedido</th>
-                                <th>Nome do cliente</th>
-                                <th>Data de emissão</th>
-                                <th>valor total</th>
-                                <th>Ações</th>
-                            </tr>
-                            <%
-                            List<UsuariosBean> lista = (ArrayList)request.getAttribute("lista");
-                                for (int i=0; i<lista.size(); i++) {
-                                    UsuariosBean u = lista.get(i);
-                                    %>
-                                    <tr>
-                                        <td><%= u.getNome_cliente()%></td>
-                                        <td><%= u.getNum_pedido()%></td>
-                                        <td><%= u.getData_emissao()%></td>
-                                        <td><%= u.getValor_total()%></td>
-                                        <td>
-                                            <a href="MeusPedidosControl?op=EDITAR&id=<%= j.getId()%>">Editar</a>&nbsp;&nbsp;
-                                        </td>
-                                    </tr>
-                                    <%
-                                    }
-                                    %>
-                        </table>
+           
                                     <br><br><br><br><br><br>
                                     </form>
                 </div>

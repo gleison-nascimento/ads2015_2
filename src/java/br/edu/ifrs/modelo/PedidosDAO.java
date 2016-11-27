@@ -18,9 +18,9 @@ import java.util.List;
  *
  * @author levymarcelo
  */
-public class pedidosDAO {
+public class PedidosDAO {
 
-    public List<UsuariosBean> buscar(UsuariosBean usu) throws Exception {
+    /*public List<UsuariosBean> buscarPorNome(UsuariosBean usu) throws Exception {
         Connection con = Conexao.abrir();
 
         PreparedStatement pstmt = con.prepareStatement("select * from usuarios where nome like ?");
@@ -39,7 +39,8 @@ public class pedidosDAO {
         con.close();
         
         return lista;
-    }
+    }*/
+    
 
     public List<PedidosBean> buscar(PedidosBean ped) throws Exception {
         Connection con = Conexao.abrir();

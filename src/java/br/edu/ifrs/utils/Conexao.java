@@ -16,7 +16,7 @@ public class Conexao {
     public static Connection abrir() throws Exception {
         //Abrir uma conexão com o banco de dados;
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/loja", "root", "");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/loja", "root", "1234");
 
         return con;
     }

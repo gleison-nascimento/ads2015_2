@@ -35,7 +35,7 @@ public class UsuariosControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String op = request.getParameter("DEFINIR UM PARAMETRO PADRÃO ATRAVÉS DO FORMADCUSUARIO");
+        String op = request.getParameter("op");
             
         if (op.equals("INSERIR")) {
             inserir(request, response);
@@ -107,7 +107,7 @@ public class UsuariosControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoBusca_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoBuscaMeusPedidos.jsp");
         dispatcher.forward(request, response);
     }
 
