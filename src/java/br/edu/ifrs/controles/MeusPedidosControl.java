@@ -5,9 +5,8 @@
  */
 package br.edu.ifrs.controles;
 
-import br.edu.ifrs.modelo.Pedidos;
 import br.edu.ifrs.modelo.UsuariosDAO;
-import br.edu.ifrs.modelo.bean.PedidoBean;
+import br.edu.ifrs.modelo.bean.PedidosBean;
 import br.edu.ifrs.modelo.bean.UsuariosBean;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,37 +59,13 @@ public class MeusPedidosControl extends HttpServlet {
                 }
             }
         }
-        
-        
-        
-//        response.setContentType("text/html;charset=UTF-8");
-        try {
-            String nroPedido = request.getParameter("nroPedido");
-            String status = request.getParameter("status");
-            int qtdItens = Integer.parseInt(request.getParameter("qtdItens"));
-            String enderecoEnvio = request.getParameter("enderecoEnvio");
-            String data = request.getParameter("data");
-            float valorTotal = Float.parseFloat(request.getParameter("valorTotal"));
-            
-            Pedidos Pid = new Pedidos();
-            Pid.setNroPedido(nroPedido);
-            Pid.setStatus(status);
-            Pid.setQtdItens(qtdItens);
-            Pid.setData(data);
-            Pid.setValorTotal(valorTotal);
-            Pid.inserir();
-        } catch (Exception ex) {
-            request.setAttribute("erro", ex.getMessage());
-        } 
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoPedidos.jsp");
-//        dispatcher.forward(request, response);
     }
 
     protected void buscar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {    
         try {
             UsuariosBean usu = new UsuariosBean();
-            PedidoBean pe = new PedidoBean();
+            PedidosBean pe = new PedidosBean();
             usu.setNome((request.getParameter("nome") == null ? "":request.getParameter("nome")));
             pe.setData_emissao((request.getParameter("data_emissao") == null ? "":request.getParameter("data_emissao")));
             

@@ -9,7 +9,7 @@ package br.edu.ifrs.modelo.bean;
  *
  * @author 10070216
  */
-public class PedidoBean {
+public class PedidosBean {
     private int id;
     private String cpf_usuario;
     private String data_emissao;
