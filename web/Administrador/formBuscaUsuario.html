@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Usuários</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Gerenciador de Usuarios</h1>
+        <hr>
+        <a href="../index.html">Página Principal</a><br><Br>
+        
+        <a href="formUsuarios.jsp">Inserir Novo usuàrio</a><br>
+        
+        <form action="UsuariosControl">
+            <input type="hidden" name="op" value="PESQUISAR">
+            
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" size="30"><br>
+            
+            <label for="perfil">Perfil:</label>
+            <select name="perfil" id="perfil">
+                <option value="">Todos</option>
+                <option value="A">Administrador</option>
+                <option value="I">Cliente</option>
+            </select><br>
+            
+            <input type="submit" value="Buscar">
+        </form>
+    </body>
+</html>

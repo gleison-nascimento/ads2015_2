@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Categorias</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Gerenciador de Categoria</h1>
+        <hr>
+        <a href="../index.html">Página Principal</a><br><Br>
+        
+        <a href="formCategorias.jsp">Inserir Nova categoria</a><br>
+        
+        <form action="CategoriasControl">
+            <input type="hidden" name="op" value="PESQUISAR">
+            
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" size="30"><br>
+            
+            <label for="situacao">Situação:</label>
+            <select name="situacao" id="situacao">
+                <option value="">Todos</option>
+                <option value="A">Ativo</option>
+                <option value="I">Inativo</option>
+            </select><br>
+            
+            <input type="submit" value="Buscar">
+        </form>
+    </body>
+</html>

@@ -23,7 +23,7 @@ public class UsuariosDAO {
     public void inserir(UsuariosBean usu) throws Exception {
         Connection con = Conexao.abrir();
 
-        PreparedStatement pstmt = con.prepareStatement("insert into usuarios (nome, rg, expedidor, cpf, sexo, endereco_residencial, email, telefone_residencial, telefone_profissional, telefone_celular, perfil, username, senha, situacao, observacoes) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        PreparedStatement pstmt = con.prepareStatement("insert into usuarios (nome, rg, expedidor, cpf, sexo, endereco_residencial text, email, telefone_residencial, telefone_profissional, telefone_celular, perfil, username, senha, situacao, observacoes text) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         pstmt.setString(1, usu.getNome());
         pstmt.setString(2, usu.getRg());
         pstmt.setString(3, usu.getOrgexp());
@@ -49,7 +49,7 @@ public class UsuariosDAO {
     public void atualizar(UsuariosBean usu) throws Exception {
         Connection con = Conexao.abrir();
 
-        PreparedStatement pstmt = con.prepareStatement("update usuarios set nome = ?, rg = ?, expedidor = ?, cpf = ?, sexo = ?, endereco = ?, email = ?, telefone_residencial = ?, telefone_profissional = ?, telefone_celular = ?, perfil = ?, username = ?, senha = ?, situacao = ? , observacoes = ? where cpf = ?");
+        PreparedStatement pstmt = con.prepareStatement("update usuarios set nome = ?, rg = ?, expedidor = ?, cpf = ?, sexo = ?, endereco = ?, email = ?, telefone_residencial = ?, telefone_profissional = ?, telefone_celular = ?, perfil = ?, username = ?, senha = ?, situacao = ? , observacoes text = ? where cpf = ?");
         pstmt.setString(1, usu.getNome());
         pstmt.setString(2, usu.getRg());
         pstmt.setString(3, usu.getOrgexp());
