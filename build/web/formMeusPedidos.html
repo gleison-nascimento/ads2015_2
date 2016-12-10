@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <body>      
+        <form action="MeusPedidosControl"> <!-- onsubmit="return validarForm();"-->
+            <input type="hidden" name="op" value="PESQUISAR">
+        <div class="col-sm-5">
+            <div class="panel panel-primary" >
+                <div class="panel-heading" align="center">Pesquisar Meus Pedidos</div>
+                <div class="panel-body" ><form action="MeusPedidosControl" > <!-- onsubmit="return validarForm();"-->
+                        <label class="formulario" for="nome">Nome:</label>
+                        <input type="text" name="nome" id="nome" size="29"><br>
+
+                        <label class="formulario" for="data">Data de emissão:</label>
+                        <input type="date" name="data_emissao">
+
+                        <br>
+                        <div  class="panel-footer" align="center">
+                            <input type="submit" value="Pesquisar">
+                            <input type="reset" value="Limpar">
+                        </div>
+                </div>
+            </div>
+        </div>
+        </form>
+        <div class="col-sm-12" align="center">
+            <div class="panel panel-primary" align="center">
+                <div class="panel-heading" >Meus Pedidos</div>
+                <div class="panel-body"><form action="MeusPedidos"> <!-- onsubmit="return validarForm();"-->
+                                            <br><br><br><br><br><br>
+                                        </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

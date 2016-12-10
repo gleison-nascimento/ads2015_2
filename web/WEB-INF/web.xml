@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    <servlet>
+        <servlet-name>CategoriasControl</servlet-name>
+        <servlet-class>br.edu.ifrs.controles.CategoriasControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MeusPedidosControl</servlet-name>
+        <servlet-class>br.edu.ifrs.controles.MeusPedidosControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProdutosControl</servlet-name>
+        <servlet-class>br.edu.ifrs.controles.ProdutosControl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UsuariosControl</servlet-name>
+        <servlet-class>br.edu.ifrs.controles.UsuariosControl</servlet-class>
+    </servlet>
+    <welcome-file-list>
+        <welcome-file>Menu.jsp</welcome-file>
+        <!--<welcome-file>Menu.jsp</welcome-file>-->
+    </welcome-file-list>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
