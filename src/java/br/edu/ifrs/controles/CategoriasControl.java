@@ -35,7 +35,7 @@ public class CategoriasControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String op = request.getParameter("op");
+         String op = request.getParameter("DEFINIR UM PARAMETRO PADRÃO ATRAVÉS DO FORMADCCATEGORIA");
             
         if (op.equals("INSERIR")) {
             inserir(request, response);
@@ -81,7 +81,7 @@ public class CategoriasControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/resultado_categoria.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_categoria.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -90,7 +90,7 @@ public class CategoriasControl extends HttpServlet {
         try {
             CategoriasBean c = new CategoriasBean();
             c.setNome((request.getParameter("nome") == null ? "":request.getParameter("nome")));
-            c.setSituacao((request.getParameter("situacao") == null ? "":request.getParameter("situacao")));
+            c.setDescricao((request.getParameter("descricao") == null ? "":request.getParameter("descricao")));
             
             CategoriasDAO categoria = new CategoriasDAO();
             List<CategoriasBean> lista = categoria.buscar(c);
@@ -99,7 +99,7 @@ public class CategoriasControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/resultadoBusca_categoria.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoBusca_categoria.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -118,7 +118,7 @@ public class CategoriasControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/resultado_categoria.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_categoria.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -136,7 +136,7 @@ public class CategoriasControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/formCategorias.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("formAddcategoria.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -161,7 +161,7 @@ public class CategoriasControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/resultado_categoria.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_categoria.jsp");
         dispatcher.forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -36,9 +36,7 @@ public class MeusPedidosControl extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-         String op = request.getParameter("op");
+        String op = request.getParameter("op");
             
         if (op.equals("INSERIR")) {
             //inserir(request, response);
@@ -68,8 +66,7 @@ public class MeusPedidosControl extends HttpServlet {
             PedidosBean pe = new PedidosBean();
             usu.setNome((request.getParameter("nome") == null ? "":request.getParameter("nome")));
             pe.setData_emissao((request.getParameter("data_emissao") == null ? "":request.getParameter("data_emissao")));
-            
-  
+              
             UsuariosDAO usuario = new UsuariosDAO();
             List<UsuariosBean> lista = usuario.buscar(usu);
             request.setAttribute("lista", lista);

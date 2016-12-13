@@ -90,7 +90,7 @@ public class UsuariosControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/resultado_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_usuario.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -107,7 +107,7 @@ public class UsuariosControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/resultadoBusca_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultadoBuscaMeusPedidos.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -126,7 +126,7 @@ public class UsuariosControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/resultado_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_usuario.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -144,7 +144,7 @@ public class UsuariosControl extends HttpServlet {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/formUsuarios.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("formAddusuario.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -175,12 +175,12 @@ public class UsuariosControl extends HttpServlet {
             usuario.atualizar(usu);
             
             request.setAttribute("msg", "Usuário atualizado com sucesso!!!");
-            request.getSession().removeAttribute("jog");
+            request.getSession().removeAttribute("usua");
         } catch (Exception e) {
             request.setAttribute("erro", e.getMessage());
         }
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Administrador/resultado_usuario.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("resultado_usuario.jsp");
         dispatcher.forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

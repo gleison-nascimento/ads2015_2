@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menu</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="Estilos/Estilo.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <img src="Imagens/Loj-o-Oba-Oba.png" class="img-responsive" style="width:100%" alt="ImageBanner"/>
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!--<a class="navbar-brand" href="#">Logo</a>-->
+            </div>
+
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="Menu.jsp">Home</a></li>
+                <li><a href="Produtos.jsp">Produtos</a></li>
+                <li><a href="MeusPedidos.jsp">Meus Pedidos</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="Administrador.jsp"> Administração 
+                	<span class="caret"></span>
+                	<ul class="dropdown-menu">
+	                  <li><a href="#">Adicionar Categoria</a></li>
+	                  <li><a href="#">Adicionar Produto</a></li>
+	                  <li><a href="#">Adicionar Usuario</a></li>
+	       			</ul>
+                </a></li>               
+                <li><a href="FaleConosco.jsp">Fale Conosco</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sua Conta</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Carrinho</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </body>
+</html>
